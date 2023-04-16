@@ -37,7 +37,6 @@ for (index, value) in money.enumerated(){
 //еще один массив - имена месяцев В цикле вывести месяц + дни+
 //сделать третий массив тюплов (месяц:количество дней) - один массив+
 //вывеси количество дней в месяце задом наперед+
-//посчитать на основании массива количество дней до ДР
 
 //массив опциональных интеджеров 5 штук нилы/инты в цикле посчитать сумму и вывести (ОпшБанд ФорсАнр ??)+
 
@@ -63,11 +62,29 @@ var summ:Int = 0
 var intArray = [1,3,5,nil,1,3,9]
 for i in intArray {
     var z = 0
-    if i != nil {
-        z = i!
-    } else {
-        z = 0
-    }
+        if i != nil {
+            z = i!
+        } else {
+            z = 0
+        }
     summ=summ+z
     print(summ)
 }
+
+
+var array1 = [(String, Int)] ()
+for i in 0..<monthDays.count {
+    var month = (month:monthNames[i], day:monthDays[i])
+    array1.append(month)
+}
+print (array1)
+array1[0]
+
+//посчитать на основании массива количество дней до ДР
+var dayOfBirth = (month: 9, day: 18)
+var days=0
+for i in 0..<dayOfBirth.month {
+    days = days + monthDays[i]
+}
+days = days+dayOfBirth.day
+print(days)
