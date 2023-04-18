@@ -39,3 +39,38 @@ for (key, value) in dict2 {
 //словарь дней в месяцах месяц ключ дни значение, вывести на экран попарно тюплами, и вывести циклом через массив ключей и выводили пару
 
 //словарь ключ адресс ячейки на шахатной доске, значение ключа тру если белая клетка, фалс если ячейка черная
+
+var students = ["Ivanov Ivan": 5, "Petrov Petr": 2, "Sidorov Ignat": 3]
+students["Sidorov Ignat"] = 4
+students["Petrov Petr"] = 3
+var summ:Int = 0
+students["Semyon Semyonych"] = 1
+students["Ibragim Korzhyn"] = 3
+for (_, value) in students {
+    summ = summ+value
+}
+print("Общий балл = \(summ)")
+print("Средний балл = \(summ/students.count)")
+
+var halfYear = ["Jan":31, "Feb":28, "March":31, "Apr":30, "May":31, "Jun":30]
+for (month, days) in halfYear {
+    var currentMonth = (month, days)
+    print(currentMonth)
+    print(month, halfYear[month]!, "from array key")
+}
+
+var chessDesk = [11:false]
+var boolCheck:Bool
+for i in 1...8 {
+    for k in 1...8 {
+        var z="\(i)\(k)"
+        if (i+k)%2==0 {
+            boolCheck = false
+        } else {
+            boolCheck = true
+        }
+        chessDesk[Int(z)!]=boolCheck
+    }
+}
+print (chessDesk)
+chessDesk[11]
