@@ -87,3 +87,22 @@ func stringToArray (string:String) {
 
 stringToArray(string: homeString)
 arrayString.sort(by: <)
+
+//
+//var array = [1,2,3,4,5,6,7,8,9,11,22,33,44,55]
+//var clearArray = [Int]()
+//func globalSort (array:Array<Int>, function:(Int, Int?)->Bool) {
+//    var z = 6
+//    for i in array {
+//        if function(i,z) {
+//            clearArray.append(i)
+//        }
+//    }
+//}
+//
+//func smallSort (a:Int, b:Int?)->Bool {
+//    return a>b!
+//}
+//
+//globalSort(array: array, function: smallSort)
+//print (clearArray)
