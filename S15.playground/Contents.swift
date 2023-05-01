@@ -80,3 +80,40 @@ d.isHorizontal
 //Енум цветовой гаммы интеджер 3 байта, у этого енама три свойства - кол-во цветов, начальный цвет, конечный цвет
 
 //класс человек, макс вес макс возраст, макс длина имени,фамилии, свойство которое содержит количество созданных объектов 
+
+let maxNameLenght = 10
+class NewHuman {
+    static var maxAge = 100
+    var name:String {
+        didSet {
+            if name.count>maxNameLenght {
+                name = oldValue
+            }
+        }
+    }
+    var weigth:Int
+    var age:Int {
+        didSet {
+            if age>NewHuman.maxAge {
+            age = oldValue
+            }
+        }
+    }
+    init (name:String, weight:Int, age:Int) {
+        self.name = name
+        self.weigth = weight
+        self.age = age
+    }
+    
+}
+
+var newClHuman = NewHuman(name: "Ignat", weight: 80, age: 19)
+
+newClHuman.age=101
+newClHuman.name = "VASYANVASYANVASYAN"
+
+//enum colors {
+//    static startColor = FFFFFF
+//    static endColor = 000000
+//
+//}
