@@ -59,3 +59,16 @@ field["a", 5]
 
 //шахматная доска, когда по сабскрипту обращаемся к ячейке - узнаем ее цвет (лучше из енума), если вне поля - то нил
 //крестики нолики, создать поле, ячейка содержит пусто крестик или нолик + возможность распечатать, по сабскрипту обращаемся к ячейке и ставим значение
+
+struct ChessBoard {
+    var LetterArray = ["a", "b", "c", "d", "e", "f", "g", "h"]
+    subscript (number:Int, letter:String) -> String {
+        get {
+            if (((LetterArray.firstIndex(of: letter))!+1)+number)%2 == 0{
+                return "Black"} else {return "White"}
+        }
+    }
+}
+
+var squad = ChessBoard()
+squad[2,"b"]
