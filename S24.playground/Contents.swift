@@ -19,6 +19,16 @@ extension Int {
     var evenOrOdd:EvenOrOdd { //переменная типа енума выше
         return isEven ? .Even : .Odd //Если исИвен тру - возвращаем Ивен, иначе Одд
     }
+    func pow(value:Int) -> Int {
+        var temp = self
+        for _ in 1..<value {
+            temp *= self
+        }
+        return temp
+    }
+    mutating func powTo (value:Int) {//мутация ибо меняем основное значение
+        self = pow(value:value)//непонятный момент, просто велью не жрет
+    }
 }
 
 extension Int.EvenOrOdd { //расширение для расширения
@@ -30,7 +40,7 @@ extension Int.EvenOrOdd { //расширение для расширения
     }
 }
 
-let a=5
+var a=5
 if a.isOdd {
     print ("NECHET")
 }
@@ -38,3 +48,21 @@ if a.isOdd {
 
 a.evenOrOdd
 a.evenOrOdd.string
+a.pow(value: 2) //5 во второй = 25
+
+a.powTo(value: 2)
+a //изменилось непосредственно а
+
+let s = "Hello world!"
+let start = s.startIndex
+let end = s.index(start, offsetBy: 5)
+s[start..<end] //сабскрипт
+
+
+//добавить инту методы для положительного и отрицательного
+//булево значение если инт 0 то фалс иначе тру
+//возвращает количество символов в числе
+//добавить инту сабскрипт который возвращает символ по номеру в строке
+
+//для строки сделать вырезать через старт - рендж
+
